@@ -1,0 +1,22 @@
+# Ignore virtual environment
+venv/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Model training artifacts
+*.log
+*.csv
+
+# OS / IDE files
+.DS_Store
+.idea/
+.vscode/
+
+# Git
+.git/
+.gitignore
