@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Expose FastAPI default port
-EXPOSE 8000
+# Expose Render's dynamic port (optional but good practice)
+EXPOSE 10000
 
-# Run the app with uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Use Render's dynamic port environment variable
+CMD ["bash", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000}"]
